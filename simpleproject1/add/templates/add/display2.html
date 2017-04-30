@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Add Content Page</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script>
+function addFunction(){
+	var con = document.getElementById("data").value;
+	document.getElementById("print").innerHTML = con;
+}
+</script>
+
+<script>
+$(document).ready(function(){
+	$("li").click(function(){
+		$(this).hide();
+	});
+});
+
+</script>
+
+</head>
+<body>
+
+<center><h1> To Do List</h1></center>
+
+<center>
+<form action="{% url 'add:toDoList'%}" method="post"> {% csrf_token %}
+<input type="text" name="content" id="data"/>
+<button>add</button>
+</form>
+</center>
+
+<center><ul style="list-style-type:none">
+{% for i in f %}
+<h3><li>{{ i.data }}</li></h3>
+{% endfor %}
+</ul></center>
+
+</body>
+</html>
