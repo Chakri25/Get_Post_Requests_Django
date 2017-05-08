@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^add/', 'add.views.add'),
 	url(r'^new$','add.views.add'),
+	url(r'^delete$','add.views.delete'),
 	url(r'^test/([0-9]{1})/$','add.views.test', name='test'),
 ]

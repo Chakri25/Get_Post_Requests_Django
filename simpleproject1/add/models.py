@@ -4,5 +4,5 @@ from django.db import models
 class toDoList(models.Model):
 	data = models.CharField(max_length = 20)
 	def __str__(self):
-		return(self.data)
+		return(self.data+" : "+ str(self.id))
 	
